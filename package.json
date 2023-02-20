@@ -1,26 +1,25 @@
 {
-    "devDependencies": {
-      "babel-eslint": "^10.1.0",
-      "eslint": "^7.32.0",
-      "eslint-config-airbnb-base": "^14.2.1",
-      "eslint-plugin-import": "^2.27.5",
-      "stylelint": "^13.13.1",
-      "stylelint-config-standard": "^21.0.0",
-      "stylelint-csstree-validator": "^1.9.0",
-      "stylelint-scss": "^3.21.0",
-      "@babel/core": "^7.21.0",
-      "@babel/preset-env": "^7.20.2",
-      "babel-loader": "^9.1.2",
-      "css-loader": "^6.7.3",
-      "html-webpack-plugin": "^5.5.0",
-      "sass-loader": "^13.2.0",
-      "style-loader": "^3.3.1",
-      "webpack": "^5.75.0",
-      "webpack-cli": "^5.0.1",
-      "webpack-dev-server": "^4.11.1"
-    },
-    "scripts": {
-      "test" : "npx stylelint '**/*.{css,scss}' && npx eslint . && echo everything-looks-good",
-      "fix" : "npx stylelint '**/*.{css,scss} --fix' && npx eslint . --fix && echo everything-fixed"
-    }
+  "name": "todolist_microverse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidEspinoG/ToDoList_microverse.git"
+  },
+  "author": "David Espino davidespinog@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DavidEspinoG/ToDoList_microverse/issues"
+  },
+  "homepage": "https://github.com/DavidEspinoG/ToDoList_microverse#readme",
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
   }
+}
