@@ -1,4 +1,4 @@
-// import "./style.scss";
+import "./style.scss";
 
 const fancyFunc = () => {
   return [1, 2]
