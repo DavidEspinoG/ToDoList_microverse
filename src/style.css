@@ -1,0 +1,9 @@
+/* $test: #e5e5e5;
+
+h1 {
+  color: $test;
+} */
+
+h1 {
+  color: palevioletred;
+}
