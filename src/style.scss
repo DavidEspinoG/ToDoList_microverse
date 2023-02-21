@@ -43,6 +43,7 @@ html {
 
 main {
   min-height: 100vh;
+
   @include flex-column-center();
 }
 
@@ -53,8 +54,10 @@ p {
 .toDo {
   @include flex-space-between();
   @include element-styling();
+
   .left {
     @include flex-space-between();
+
     gap: 1rem;
   }
 }
@@ -72,6 +75,7 @@ p {
 
 .inputContainer {
   @include element-styling();
+
   .input {
     border: none;
     width: 100%;
@@ -84,7 +88,9 @@ p {
 
 .clear {
   background-color: $light-gray;
+
   @include flex-column-center();
+
   padding: 1rem;
   font-size: 1.6rem;
   color: $gray;

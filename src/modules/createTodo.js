@@ -1,11 +1,11 @@
 const createTodo = (object) => {
-  //Create
+  // Create
   const container = document.createElement('div');
   container.classList.add('toDo');
   const left = document.createElement('div');
   left.classList.add('left');
   const square = document.createElement('i');
-  if(!object.completed){
+  if (!object.completed) {
     square.classList.add('fa-regular');
     square.classList.add('fa-square');
   } else {
@@ -20,11 +20,11 @@ const createTodo = (object) => {
   dots.classList.add('fa-ellipsis-vertical');
   dots.classList.add('fa-2x');
   dots.classList.add('dots');
-  //Append
+  // Append
   container.append(left, dots);
   left.append(square, description);
 
   return container;
-}
+};
 
 export default createTodo;
