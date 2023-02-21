@@ -19,7 +19,7 @@ const createTodo = (object) => {
   dots.classList.add('fa-solid');
   dots.classList.add('fa-ellipsis-vertical');
   dots.classList.add('fa-2x');
-
+  dots.classList.add('dots');
   //Append
   container.append(left, dots);
   left.append(square, description);
