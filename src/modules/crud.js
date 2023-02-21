@@ -1,24 +1,23 @@
-const toDos = [
-  {
-    description: 'Clean the dishes',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Read a book',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'Close the door',
-    completed: false,
-    index: 3,
-  },
-];
+const getTodos = () => {
+  if(!localStorage.getItem('toDos')) {
+    return [];
+  } else {
+    let parsed =JSON.parse(localStorage.getItem('toDos'));
+    return parsed;
+  };
+};
+
+const toDos = getTodos();
+
+const updateLocalStorage = (updatedTodos) => {
+  let stringified = JSON.stringify(updatedTodos);
+  localStorage.setItem('toDos', stringified);
+}
 
 const addTodo = (description) => {
   const newTodo = { description, completed: false, index: toDos.length + 1 };
   toDos.push(newTodo);
+  updateLocalStorage(toDos);
 };
 
 const deleteTodo = (index) => {
@@ -28,7 +27,26 @@ const deleteTodo = (index) => {
   toDos.forEach(element => {
     element.index = counter;
     counter++;
-  })
-}
+  });
+  updateLocalStorage(toDos);
+};
 
-export { toDos, addTodo, deleteTodo };
+const updateTodo = (index, value) => {
+  toDos.forEach(element => {
+    if(element.index === index){
+      element.description = value;
+    };
+  });
+  updateLocalStorage(toDos);
+};
+
+const toggleCompleteTodo = (index) => {
+  toDos.forEach(element => {
+    if(element.index === index) {
+      element.completed = !element.completed;
+    };
+  });
+  updateLocalStorage(toDos);
+} ;
+
+export { toDos, addTodo, deleteTodo, updateTodo, toggleCompleteTodo };

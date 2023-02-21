@@ -2,7 +2,8 @@ $primary-font: 'Nunito', sans-serif;
 $light-gray: #e8e8e8;
 $gray: #6f6c76;
 $white: #fbfbfb;
-$yellow: rgba(226, 226, 130, 0.5);
+$yellow: rgb(245, 245, 171);
+
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -14,6 +15,16 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+@mixin reset-input {
+  border: none;
+  width: 100%;
+  height: 100%;
+  background-color: $white;
+  color: $gray;
+  outline: none;
+  font-size: 1.5rem;
 }
 
 @mixin reset-margin-padding {
@@ -43,7 +54,6 @@ html {
 
 main {
   min-height: 100vh;
-
   @include flex-column-center();
 }
 
@@ -80,12 +90,7 @@ p {
   @include element-styling();
 
   .input {
-    border: none;
-    width: 100%;
-    height: 100%;
-    background-color: $white;
-    color: $gray;
-    outline: none;
+    @include reset-input();
   }
 }
 
@@ -101,6 +106,17 @@ p {
 
 .dots:hover {
   cursor: move;
+}
+
+.description {
+  @include reset-input();
+  &:focus{
+    background-color: $yellow;
+  }
+}
+
+.focus {
+  background-color: $yellow;
 }
 
 .display-none {
