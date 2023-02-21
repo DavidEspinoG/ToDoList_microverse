@@ -25,18 +25,18 @@
 
 # 📖 Portfolio <a id="about-project"></a>
 
-> Project created for showing my expirience as a software developer
+> A minimalistic to-do app for managing tasks. Features include adding, editing, deleting, and marking tasks as completed
 
 ## 🛠 Built With <a id="built-with"></a>
 
 ### Tech Stack <a id="tech-stack"></a>
 
-> HTML & CSS
+> HTML, CSS, JS, Webpack, Sass
 
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="#">HTML & CSS</a></li>
+    <li><a href="#">HTML, CSS, JS, Sass</a></li>
   </ul>
 </details>
 
@@ -58,8 +58,8 @@
 
 ### Key Features <a id="key-features"></a>
 
-- Show's the best of my work as a software developer
-- Responsive web
+- Add, update or delete pending tasks
+- Also saved in localStorage
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -70,7 +70,7 @@
 > Add a link to your deployed project.
 
 
-- [Live Demo Link](https://davidespinog.github.io/portfolio/)
+- [Live Demo Link(deploy pending)](https://davidespinog.github.io/portfolio/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -86,14 +86,13 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-> git clone https://github.com/DavidEspinoG/portfolio.git
-> (you can open it via live server in VS)
+> Just a regular web browser
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-> git clone https://github.com/DavidEspinoG/portfolio.git
+> git clone https://github.com/DavidEspinoG/ToDoList_microverse.git
 
 ### Install
 
@@ -110,7 +109,7 @@ To run the project just open it in VS and run liveServer
 
 To run tests, run the following command:
 
-N/A
+npm run test
 ### Deployment
 
 You can deploy this project using:
@@ -138,8 +137,7 @@ N/A
 ## 🔭 Future Features <a id="future-features"></a>
 
 
-- More projects are going to be added **[new_feature_1]**
-- A contact form
+- The syncronization between different browsers in the same machine is going to be improved
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
