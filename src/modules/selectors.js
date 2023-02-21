@@ -1,3 +1,4 @@
 const toDosContainer = document.getElementById('toDosContainer');
+const todoInput = document.getElementById('todoInput');
 
-export default toDosContainer;
+export {toDosContainer, todoInput};
