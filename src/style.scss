@@ -54,6 +54,7 @@ html {
 
 main {
   min-height: 100vh;
+
   @include flex-column-center();
 }
 
@@ -67,6 +68,7 @@ p {
 
   .left {
     @include flex-space-between();
+
     gap: 1rem;
   }
 
@@ -110,7 +112,8 @@ p {
 
 .description {
   @include reset-input();
-  &:focus{
+
+  &:focus {
     background-color: $yellow;
   }
 }

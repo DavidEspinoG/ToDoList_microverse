@@ -1,6 +1,7 @@
-import { deleteTodo, toDos, toggleCompleteTodo } from "./crud.js";
-import updateHtml from "./updateHtml.js";
-import { updateTodo } from "./crud.js";
+import {
+  deleteTodo, toggleCompleteTodo, updateTodo, toDos,
+} from './crud.js';
+import { toDosContainer } from './selectors.js';
 
 const createTodo = (object) => {
   // Create
@@ -34,7 +35,10 @@ const createTodo = (object) => {
   trashCan.classList.add('fa-solid', 'fa-trash', 'display-none');
   trashCan.addEventListener('click', () => {
     deleteTodo(object.index);
-    updateHtml();
+    toDosContainer.innerHTML = '';
+    toDos.forEach((element) => {
+      toDosContainer.appendChild(createTodo(element));
+    });
   });
   // Append
   container.append(left, dots, trashCan);
@@ -57,7 +61,7 @@ const createTodo = (object) => {
     dots.classList.add('display-none');
     trashCan.classList.remove('display-none');
     description.classList.add('focus');
-  })
+  });
   container.addEventListener('focusout', (e) => {
     e.stopPropagation();
     dots.classList.remove('display-none');
@@ -66,8 +70,11 @@ const createTodo = (object) => {
   });
   square.addEventListener('click', () => {
     toggleCompleteTodo(object.index);
-    updateHtml();
-  })
+    toDosContainer.innerHTML = '';
+    toDos.forEach((element) => {
+      toDosContainer.appendChild(createTodo(element));
+    });
+  });
 
   return container;
 };
