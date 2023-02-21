@@ -1,5 +1,71 @@
-$test: #ba7070;
+$primary-font: 'Nunito', sans-serif;
+$light-gray: #726c81;
+$gray: #565164;
+$light-green: #9ddbca;
+$green: #92b395;
 
-h1 {
-  color: $test;
-} 
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: $primary-font;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin border-styling  {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid $light-green;
+  color: $light-gray;
+  width: 35rem;
+  &:focus {
+    outline: none;
+    border: 1px solid $green;
+  }
+}
+
+main {
+  min-height: 100vh;
+  @include flex-column-center();
+}
+
+.title {
+  color: $gray;
+  font-size: 2.6rem;
+}
+
+.newTodo {
+  
+  margin-bottom: 1rem;
+  @include border-styling();
+}
+
+.toDosContainer {
+  @include border-styling();
+}
+
+.toDo {
+  @include flex-space-between();
+  font-size: 1.5rem;
+  .left {
+    @include flex-space-between();
+    gap: 1rem;
+  }
+}
