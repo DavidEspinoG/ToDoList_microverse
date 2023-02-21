@@ -2,7 +2,7 @@ $primary-font: 'Nunito', sans-serif;
 $light-gray: #e8e8e8;
 $gray: #6f6c76;
 $white: #fbfbfb;
-
+$yellow: rgba(226, 226, 130, 0.5);
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -57,8 +57,11 @@ p {
 
   .left {
     @include flex-space-between();
-
     gap: 1rem;
+  }
+
+  &:focus {
+    background-color: $yellow;
   }
 }
 
@@ -98,4 +101,8 @@ p {
 
 .dots:hover {
   cursor: move;
+}
+
+.display-none {
+  display: none;
 }
