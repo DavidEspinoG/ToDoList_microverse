@@ -5,8 +5,13 @@ const createTodo = (object) => {
   const left = document.createElement('div');
   left.classList.add('left');
   const square = document.createElement('i');
-  square.classList.add('fa-regular');
-  square.classList.add('fa-square');
+  if(!object.completed){
+    square.classList.add('fa-regular');
+    square.classList.add('fa-square');
+  } else {
+    square.classList.add('fa-solid');
+    square.classList.add('fa-check');
+  }
   square.classList.add('fa-2x');
   const description = document.createElement('p');
   description.innerText = object.description;
