@@ -53,7 +53,7 @@ const clearCompleted = () => {
   filtered.forEach((element) => {
     deleteTodo(element.index);
   });
-  updateLocalStorage();
+  updateLocalStorage(toDos);
 };
 
 export {
