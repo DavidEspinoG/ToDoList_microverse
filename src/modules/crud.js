@@ -48,6 +48,19 @@ const toggleCompleteTodo = (index) => {
   updateLocalStorage(toDos);
 };
 
+const clearCompleted = () => {
+  const filtered = toDos.filter(element  => element.completed);
+  filtered.forEach(element => {
+    deleteTodo(element.index);
+  });
+  updateLocalStorage();
+};
+
 export {
-  toDos, addTodo, deleteTodo, updateTodo, toggleCompleteTodo,
+  toDos, 
+  addTodo, 
+  deleteTodo, 
+  updateTodo, 
+  toggleCompleteTodo,
+  clearCompleted
 };

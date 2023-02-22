@@ -1,6 +1,6 @@
 import './style.scss';
-import { addTodo } from './modules/crud.js';
-import { todoInput } from './modules/selectors.js';
+import { addTodo, clearCompleted } from './modules/crud.js';
+import { todoInput, clearButton } from './modules/selectors.js';
 import updateHtml from './modules/updateHtml.js';
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -13,4 +13,9 @@ todoInput.addEventListener('keypress', (e) => {
     todoInput.value = '';
     updateHtml();
   }
+});
+
+clearButton.addEventListener('click', () => {
+  clearCompleted();
+  updateHtml();
 });
