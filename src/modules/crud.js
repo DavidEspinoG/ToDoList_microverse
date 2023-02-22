@@ -1,3 +1,5 @@
+import updateHtml from './updateHtml.js';
+
 const getTodos = () => {
   if (!localStorage.getItem('toDos')) {
     return [];
@@ -56,6 +58,15 @@ const clearCompleted = () => {
   updateLocalStorage(toDos);
 };
 
+const switchElements = (element1, element2) => {
+  toDos[element1.index - 1].completed = element2.completed;
+  toDos[element1.index - 1].description = element2.description;
+  toDos[element2.index - 1].completed = element1.completed;
+  toDos[element2.index - 1].description = element1.description;
+  updateHtml();
+  updateLocalStorage(toDos);
+};
+
 export {
   toDos,
   addTodo,
@@ -63,4 +74,5 @@ export {
   updateTodo,
   toggleCompleteTodo,
   clearCompleted,
+  switchElements,
 };

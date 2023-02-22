@@ -3,7 +3,7 @@ $light-gray: #e8e8e8;
 $gray: #6f6c76;
 $white: #fbfbfb;
 $yellow: rgb(245, 245, 171);
-$blue: rgb(77, 77, 252);
+$blue: rgb(125, 125, 234);
 
 html {
   box-sizing: border-box;
@@ -55,6 +55,7 @@ html {
 
 main {
   min-height: 100vh;
+
   @include flex-column-center();
 }
 
@@ -65,9 +66,12 @@ p {
 .toDo {
   @include flex-space-between();
   @include element-styling();
+
   position: relative;
+
   .left {
     @include flex-space-between();
+
     gap: 1rem;
   }
 
@@ -137,4 +141,8 @@ p {
 
 .over {
   border: 0.5px solid $blue;
+}
+
+.opacity {
+  opacity: 0.4;
 }

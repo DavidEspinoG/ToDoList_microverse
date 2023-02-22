@@ -2,13 +2,16 @@ import {
   deleteTodo, toggleCompleteTodo, updateTodo, toDos,
 } from './crud.js';
 import { toDosContainer } from './selectors.js';
-import addDragOver from './drag.js';
+import addDragListeners from './drag.js';
 
 const createTodo = (object) => {
   // Create
   const container = document.createElement('div');
   container.tabIndex = 1;
   container.classList.add('toDo');
+  container.setAttribute('index', object.index);
+  container.setAttribute('description', object.description);
+  container.setAttribute('completed', object.completed);
   const left = document.createElement('div');
   left.classList.add('left');
   const right = document.createElement('div');
@@ -46,7 +49,7 @@ const createTodo = (object) => {
   // Append
   container.append(left, right);
   left.append(square, description);
-  right.append(dots, trashCan)
+  right.append(dots, trashCan);
 
   // Event listeners
   description.addEventListener('focusin', (e) => {
@@ -82,10 +85,7 @@ const createTodo = (object) => {
   dots.addEventListener('mousedown', (e) => {
     e.stopPropagation();
     container.draggable = 'true';
-    addDragOver();
-  });
-  container.addEventListener('dragend', (e)=> {
-    container.draggable = false;
+    addDragListeners();
   });
   return container;
 };
