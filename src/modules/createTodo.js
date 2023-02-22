@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import {
   deleteTodo, toggleCompleteTodo, updateTodo, toDos,
 } from './crud.js';
@@ -65,13 +66,11 @@ const createTodo = (object) => {
   });
   container.addEventListener('focusin', (e) => {
     e.stopPropagation();
-    // dots.classList.add('display-none');
     trashCan.classList.remove('display-none');
     description.classList.add('focus');
   });
   container.addEventListener('focusout', (e) => {
     e.stopPropagation();
-    // dots.classList.remove('display-none');
     trashCan.classList.add('display-none');
     description.classList.remove('focus');
   });

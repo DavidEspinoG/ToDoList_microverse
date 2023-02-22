@@ -4,6 +4,7 @@ const stringToBool = (string) => {
   } if (string === 'false') {
     return false;
   }
+  return null;
 };
 
 export default stringToBool;

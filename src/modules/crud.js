@@ -1,4 +1,6 @@
-import updateHtml from './updateHtml.js';
+/* eslint-disable import/no-cycle */
+import { toDosContainer } from './selectors.js';
+import createTodo from './createTodo.js';
 
 const getTodos = () => {
   if (!localStorage.getItem('toDos')) {
@@ -63,7 +65,10 @@ const switchElements = (element1, element2) => {
   toDos[element1.index - 1].description = element2.description;
   toDos[element2.index - 1].completed = element1.completed;
   toDos[element2.index - 1].description = element1.description;
-  updateHtml();
+  toDosContainer.innerHTML = '';
+  toDos.forEach((element) => {
+    toDosContainer.appendChild(createTodo(element));
+  });
   updateLocalStorage(toDos);
 };
 

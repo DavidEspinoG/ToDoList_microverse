@@ -1,4 +1,5 @@
-import { switchElements } from './crud';
+/* eslint-disable import/no-cycle */
+import { switchElements } from './crud.js';
 import stringToBool from './stringToBool.js';
 
 const addDragListeners = () => {
