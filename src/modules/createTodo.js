@@ -78,11 +78,15 @@ const createTodo = (object) => {
       toDosContainer.appendChild(createTodo(element));
     });
   });
-  dots.addEventListener('click', (e) => {
+  dots.addEventListener('mousedown', (e) => {
     e.stopPropagation();
-    console.log('click')
-  })
-
+    console.log('mouse down')
+    container.draggable = 'true';
+  });
+  container.addEventListener('dragend', (e)=> {
+    console.log('stop moving')
+    container.draggable = false;
+  });
   return container;
 };
 
