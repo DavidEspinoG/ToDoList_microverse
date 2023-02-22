@@ -2,6 +2,7 @@ import {
   deleteTodo, toggleCompleteTodo, updateTodo, toDos,
 } from './crud.js';
 import { toDosContainer } from './selectors.js';
+import addDragOver from './drag.js';
 
 const createTodo = (object) => {
   // Create
@@ -80,11 +81,10 @@ const createTodo = (object) => {
   });
   dots.addEventListener('mousedown', (e) => {
     e.stopPropagation();
-    console.log('mouse down')
     container.draggable = 'true';
+    addDragOver();
   });
   container.addEventListener('dragend', (e)=> {
-    console.log('stop moving')
     container.draggable = false;
   });
   return container;
