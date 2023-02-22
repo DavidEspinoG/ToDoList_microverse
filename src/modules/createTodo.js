@@ -10,6 +10,8 @@ const createTodo = (object) => {
   container.classList.add('toDo');
   const left = document.createElement('div');
   left.classList.add('left');
+  const right = document.createElement('div');
+  right.classList.add('right');
   const square = document.createElement('i');
   square.classList.add('fa-2x');
   const description = document.createElement('input');
@@ -41,8 +43,9 @@ const createTodo = (object) => {
     });
   });
   // Append
-  container.append(left, dots, trashCan);
+  container.append(left, right);
   left.append(square, description);
+  right.append(dots, trashCan)
 
   // Event listeners
   description.addEventListener('focusin', (e) => {
@@ -58,13 +61,13 @@ const createTodo = (object) => {
   });
   container.addEventListener('focusin', (e) => {
     e.stopPropagation();
-    dots.classList.add('display-none');
+    // dots.classList.add('display-none');
     trashCan.classList.remove('display-none');
     description.classList.add('focus');
   });
   container.addEventListener('focusout', (e) => {
     e.stopPropagation();
-    dots.classList.remove('display-none');
+    // dots.classList.remove('display-none');
     trashCan.classList.add('display-none');
     description.classList.remove('focus');
   });
@@ -75,6 +78,10 @@ const createTodo = (object) => {
       toDosContainer.appendChild(createTodo(element));
     });
   });
+  dots.addEventListener('click', (e) => {
+    e.stopPropagation();
+    console.log('click')
+  })
 
   return container;
 };

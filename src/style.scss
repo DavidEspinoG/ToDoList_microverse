@@ -54,7 +54,6 @@ html {
 
 main {
   min-height: 100vh;
-
   @include flex-column-center();
 }
 
@@ -65,10 +64,9 @@ p {
 .toDo {
   @include flex-space-between();
   @include element-styling();
-
+  position: relative;
   .left {
     @include flex-space-between();
-
     gap: 1rem;
   }
 
@@ -106,6 +104,12 @@ p {
   color: $gray;
 }
 
+.dots {
+  position: absolute;
+  left: 310px;
+  bottom: 9.5px;
+}
+
 .dots:hover {
   cursor: move;
 }
@@ -129,3 +133,4 @@ p {
 .finished {
   text-decoration: line-through;
 }
+
