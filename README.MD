@@ -70,7 +70,7 @@
 > Add a link to your deployed project.
 
 
-- [Live Demo Link(deploy pending)](https://davidespinog.github.io/portfolio/)
+- [Live Demo Link](https://davidespinog.github.io/ToDoList_microverse/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
