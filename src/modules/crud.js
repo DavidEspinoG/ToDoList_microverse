@@ -1,3 +1,7 @@
+/* eslint-disable import/no-cycle */
+import { toDosContainer } from './selectors.js';
+import createTodo from './createTodo.js';
+
 const getTodos = () => {
   if (!localStorage.getItem('toDos')) {
     return [];
@@ -48,6 +52,32 @@ const toggleCompleteTodo = (index) => {
   updateLocalStorage(toDos);
 };
 
+const clearCompleted = () => {
+  const filtered = toDos.filter((element) => element.completed);
+  filtered.forEach((element) => {
+    deleteTodo(element.index);
+  });
+  updateLocalStorage(toDos);
+};
+
+const switchElements = (element1, element2) => {
+  toDos[element1.index - 1].completed = element2.completed;
+  toDos[element1.index - 1].description = element2.description;
+  toDos[element2.index - 1].completed = element1.completed;
+  toDos[element2.index - 1].description = element1.description;
+  toDosContainer.innerHTML = '';
+  toDos.forEach((element) => {
+    toDosContainer.appendChild(createTodo(element));
+  });
+  updateLocalStorage(toDos);
+};
+
 export {
-  toDos, addTodo, deleteTodo, updateTodo, toggleCompleteTodo,
+  toDos,
+  addTodo,
+  deleteTodo,
+  updateTodo,
+  toggleCompleteTodo,
+  clearCompleted,
+  switchElements,
 };
